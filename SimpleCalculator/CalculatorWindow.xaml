@@ -1,0 +1,284 @@
+﻿<Window x:Class="SimpleCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalculator"
+        mc:Ignorable="d"
+        Title="Peecee Part Picker" Height="450" Width="800">
+    <Grid>
+        <Image Source="Media/background.jpg"
+               Width="800"
+               Height="450"></Image>
+        <Grid
+            Margin="20,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Content="PeeCee Part Picker"
+                FontSize="24"
+                Foreground="black"
+                FontWeight="bold"
+                />
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel                
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Orientation="Vertical">
+                    <Label                
+                    Content="Choose a CPU"
+                    FontSize="16"
+                    Foreground="black"                
+                    />
+                    <ComboBox
+                        VerticalAlignment="Center"
+                        x:Name="CPU"
+                        Height="30"
+                        VerticalContentAlignment="Center"
+                        Margin="10" DropDownClosed="CPU_DropDownClosed">
+                        <ComboBoxItem Content="Please Select an Item" IsSelected="true"/>
+                        <ComboBoxItem Content="Ryzen 5 3600X"/>
+                        <ComboBoxItem Content="Ryzen 7 3700X"/>
+                        <ComboBoxItem Content="Intel i7 6700k"/>
+                        <ComboBoxItem Content="Intel i7 9700K"/>
+                        <ComboBoxItem Content="Ryzen 9 3900X"/>
+                        <ComboBoxItem Content="Intel i7 10700KF"/>
+                        <ComboBoxItem Content="Intel i7 9900K"/>
+                        <ComboBoxItem Content="Ryzen 9 3950X"/>
+                        <ComboBoxItem Content="Intel i9 10900K"/>
+                    </ComboBox>
+                </StackPanel>
+
+
+                <StackPanel
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Orientation="Vertical">
+                    <Label                
+                    Content="Choose a GPU"
+                    FontSize="16"
+                    Foreground="black"                
+                    />
+
+                    <ComboBox
+                        VerticalAlignment="Center"
+                        x:Name="GPU"
+                        Height="30"
+                        VerticalContentAlignment="Center"
+                        Margin="10" DropDownClosed="GPU_DropDownClosed">
+                        <ComboBoxItem Content="Please Select an Item" IsSelected="true"/>
+                        <ComboBoxItem Content="GTX 1060"/>
+                        <ComboBoxItem Content="GTX 1080ti"/>
+                        <ComboBoxItem Content="RTX 2060"/>
+                        <ComboBoxItem Content="RTX 2070 Super"/>
+                        <ComboBoxItem Content="RTX 2080ti"/>
+                        <ComboBoxItem Content="RX 570"/>
+                        <ComboBoxItem Content="RX 5600"/>
+                        <ComboBoxItem Content="RX 5700XT"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Orientation="Horizontal">                    
+
+                    <Label
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Content="$"
+                    FontSize="24">
+                    </Label>
+
+                    <TextBox  
+                    x:Name="CPU_Price"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"                   
+                    FontSize="24"
+                    Foreground="black"
+                    FontWeight="bold"
+                    IsReadOnly="True"
+                />
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+                    <Label
+                    VerticalAlignment="Bottom"
+                    Content="$"
+                    FontSize="24">
+                    </Label>
+                <TextBox  
+                    x:Name="GPU_Price"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                 
+                    FontSize="24"
+                    Foreground="black"
+                    FontWeight="bold"
+                    IsReadOnly="True"
+                />
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Orientation="Vertical">
+                    <Label                
+                    Content="Choose Ram"
+                    FontSize="16"
+                    Foreground="black"                
+                    />
+                    <ComboBox
+                        VerticalAlignment="Center"
+                        x:Name="Ram"
+                        Height="30"
+                        VerticalContentAlignment="Center"
+                        Margin="10" DropDownClosed="Ram_DropDownClosed">
+                        <ComboBoxItem Content="Please Select an Item" IsSelected="true"/>
+                        <ComboBoxItem Content="8 GB 2666"/>
+                        <ComboBoxItem Content="16 GB 2666"/>
+                        <ComboBoxItem Content="8 GB 3000"/>
+                        <ComboBoxItem Content="16 GB 3000"/>
+                        <ComboBoxItem Content="32 GB 3000"/>
+                        <ComboBoxItem Content="16 GB 3200"/>
+                        <ComboBoxItem Content="32 GB 3200"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+                    <Label
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Content="$"
+                    FontSize="24">
+                    </Label>
+                    <TextBox  
+                    x:Name="Ram_Price"
+                    VerticalAlignment="Bottom"                   
+                    FontSize="24"
+                    Foreground="black"
+                    FontWeight="bold"
+                    IsReadOnly="True"
+                    />
+                </StackPanel>
+                <Grid
+                    Grid.Row="3"
+                    Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label      
+                        Grid.Row="0"
+                        Content="Choose # of Payments"
+                        FontSize="16"
+                        Foreground="black"                
+                    />
+                    <StackPanel
+                        Grid.Row="1"
+                        Orientation="Horizontal">
+                        <TextBox 
+                        Margin="0,0,10,0"
+                        x:Name="Payments"
+                        FontSize="24"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        Width="60">
+                        
+                    </TextBox>
+                    <Button                        
+                        Content="Calculate"
+                        FontSize="24"
+                        x:Name="Calculate"
+                        HorizontalAlignment="Right"
+                        Width="200"
+                        Background="CadetBlue"
+                        
+                        Click="Calculate_Click"></Button>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+                    
+                    <Label
+                        Margin="0,0,0,0"
+                        Content="Total:"
+                        VerticalAlignment="Bottom"
+                        FontSize="24"></Label>
+                    <TextBox
+                        x:Name="Total"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        FontSize="24">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Orientation="Horizontal">
+                    <Label
+                        FontSize="30"
+                        Content="Monthly Payment: $"></Label>
+                    <TextBox
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        x:Name="Answer"
+                        FontSize="24">                        
+                    </TextBox>
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="4"
+                    Grid.Column="4"
+                    Orientation="Horizontal">
+                <Button
+                    x:Name="Help_Window"
+                    Width="100"
+                    Height="40"
+                    Content="Help"
+                    FontSize="24" Click="Button_Click">                    
+                </Button>
+                    <Button  
+                    Margin="20,0, 0, 0"
+                    x:Name="Exit_Window"
+                    Width="100"
+                    Height="40"
+                    Content="Exit"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    FontSize="24" Click="Exit_Window_Click">
+                    </Button> 
+                </StackPanel>
+
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
